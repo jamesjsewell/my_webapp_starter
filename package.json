@@ -1,0 +1,19 @@
+{
+    "name": "general_purpose_api",
+    "version": "1.0.0",
+    "description": "general purpose api",
+    "main": "index.js",
+    "scripts": {
+      "start": "NODE_ENV=production node ./api/server.js",
+      "dev": "NODE_ENV=development node ./api/server.js"
+    },
+    "author": "jamesjsewell",
+    "license": "ISC",
+    "devDependencies": {
+      "body-parser": "^1.18.2",
+      "dotenv": "^5.0.1",
+      "express": "^4.16.3",
+      "mongoose": "^5.0.12",
+      "nodemon": "^1.17.2"
+    }
+  }
