@@ -1,19 +1,50 @@
 {
-    "name": "general_purpose_api",
-    "version": "1.0.0",
-    "description": "general purpose api",
-    "main": "index.js",
-    "scripts": {
-      "start": "NODE_ENV=production node ./api/server.js",
-      "dev": "NODE_ENV=development node ./api/server.js"
-    },
-    "author": "jamesjsewell",
-    "license": "ISC",
-    "devDependencies": {
-      "body-parser": "^1.18.2",
-      "dotenv": "^5.0.1",
-      "express": "^4.16.3",
-      "mongoose": "^5.0.12",
-      "nodemon": "^1.17.2"
-    }
+  "name": "general_purpose_api",
+  "version": "1.0.0",
+  "description": "general purpose api",
+  "main": "index.js",
+  "scripts": {
+    "dev": "run-p dev_api dev_webpack",
+    "dev_api": "NODE_ENV=development node ./api/server.js",
+    "dev_webpack": "webpack-dev-server --open --config webpack.dev.js -d",
+    "prod_api": "NODE_ENV=production node ./api/server.js",
+    "prod_build": "webpack --config webpack.prod.js"
+  },
+  "author": "jamesjsewell",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.12",
+    "nodemon": "^1.17.2",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.11",
+    "cssnano": "^3.10.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.0.6",
+    "lodash": "^4.17.5",
+    "node-sass": "^4.7.2",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0",
+    "postcss-load-config": "^1.2.0",
+    "postcss-loader": "^2.1.2",
+    "postcss-nested": "^3.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "sugarss": "^1.0.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.3"
   }
+}
