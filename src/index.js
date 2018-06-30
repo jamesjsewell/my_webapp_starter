@@ -2,25 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom";
 import './style.scss';
 import 'semantic-ui-css/semantic.min.css';
-import { Container, Segment } from 'semantic-ui-react'
+import { BrowserRouter, Route, Link } from "react-router-dom"
+import { Provider } from "react-redux"
+import { createStore, applyMiddleware } from "redux"
+import thunk from "redux-thunk"
+import RouterConfig from "./router.js"
+import rootReducer from "./features/reducers.js"
 
 
-const Index = () => {
-    return (<Container><Segment.Group>
-                <Segment>Top</Segment>
-                <Segment.Group>
-                    <Segment>Nested Top</Segment>
-                    <Segment>Nested Middle</Segment>
-                    <Segment>Nested Bottom</Segment>
-                </Segment.Group>
-                <Segment.Group horizontal>
-                    <Segment>Top</Segment>
-                    <Segment>Middle</Segment>
-                    <Segment>Bottom</Segment>
-                </Segment.Group>
-                    <Segment>Bottom</Segment>
-            </Segment.Group></Container>)
-};
+const middleware = applyMiddleware(thunk)
+const store = createStore(rootReducer, middleware)
 
-ReactDOM.render(<Index />, document.getElementById("index"));
+ReactDOM.render(
+    <Provider store={store}>
+        <BrowserRouter>
+            <RouterConfig />
+        </BrowserRouter>
+    </Provider>,
+    document.querySelector("#index")
+)
 
