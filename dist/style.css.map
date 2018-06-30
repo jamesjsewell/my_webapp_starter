@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/style.scss"],"names":[],"mappings":"AAAA;EACE,qCAAqC;EACrC,aAAa;EACb,eAAe,EAAE","file":"style.css","sourcesContent":[".hello {\n  background-color: rgba(0, 0, 0, 0.1);\n  color: black;\n  padding: .5rem; }\n"],"sourceRoot":""}
